@@ -19,7 +19,9 @@
 		3C0171361F00A0D7009C893B /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0171351F00A0D7009C893B /* Constant.swift */; };
 		3C01713B1F00C561009C893B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C01713A1F00C561009C893B /* CoreLocation.framework */; };
 		3C0570F01F016E6D00005B6D /* ConvertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0570EF1F016E6D00005B6D /* ConvertHelper.swift */; };
-		3C5DFE7A1F01DC8200092331 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5DFE791F01DC8200092331 /* LocationServices.swift */; };
+		3C3F0F041F01F9D300758C57 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3F0F031F01F9D300758C57 /* CollectionViewCell.swift */; };
+		3C3F0F061F01FD7200758C57 /* ForeCastWeatherTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3F0F051F01FD7200758C57 /* ForeCastWeatherTVC.swift */; };
+		3CDF04201F0243D9001950BC /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF041F1F0243D9001950BC /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +60,9 @@
 		3C0171351F00A0D7009C893B /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		3C01713A1F00C561009C893B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3C0570EF1F016E6D00005B6D /* ConvertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertHelper.swift; sourceTree = "<group>"; };
-		3C5DFE791F01DC8200092331 /* LocationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
+		3C3F0F031F01F9D300758C57 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		3C3F0F051F01FD7200758C57 /* ForeCastWeatherTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForeCastWeatherTVC.swift; sourceTree = "<group>"; };
+		3CDF041F1F0243D9001950BC /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +124,8 @@
 				3C01710F1F009634009C893B /* Info.plist */,
 				3C0171311F009AA6009C893B /* Weather.swift */,
 				3C0171331F009C21009C893B /* DataServices.swift */,
-				3C0171351F00A0D7009C893B /* Constant.swift */,
-				3C5DFE791F01DC8200092331 /* LocationServices.swift */,
+				3C3F0F031F01F9D300758C57 /* CollectionViewCell.swift */,
+				3C3F0F051F01FD7200758C57 /* ForeCastWeatherTVC.swift */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -155,7 +159,9 @@
 		3C0570EE1F016E6100005B6D /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				3C0171351F00A0D7009C893B /* Constant.swift */,
 				3C0570EF1F016E6D00005B6D /* ConvertHelper.swift */,
+				3CDF041F1F0243D9001950BC /* Extension.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -299,7 +305,9 @@
 			files = (
 				3C0171061F009634009C893B /* ViewController.swift in Sources */,
 				3C0570F01F016E6D00005B6D /* ConvertHelper.swift in Sources */,
-				3C5DFE7A1F01DC8200092331 /* LocationServices.swift in Sources */,
+				3C3F0F041F01F9D300758C57 /* CollectionViewCell.swift in Sources */,
+				3C3F0F061F01FD7200758C57 /* ForeCastWeatherTVC.swift in Sources */,
+				3CDF04201F0243D9001950BC /* Extension.swift in Sources */,
 				3C0171321F009AA6009C893B /* Weather.swift in Sources */,
 				3C0171361F00A0D7009C893B /* Constant.swift in Sources */,
 				3C0171041F009634009C893B /* AppDelegate.swift in Sources */,

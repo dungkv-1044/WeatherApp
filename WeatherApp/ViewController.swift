@@ -34,6 +34,7 @@ class ViewController: UIViewController  {
         }
         didSet{
             initView()
+            
         }
     }
     override func viewDidLoad() {
@@ -83,9 +84,7 @@ class ViewController: UIViewController  {
         locationLabel.text = (weather?.cityName)! + ", " + (weather?.country)!
         weatherLabel.text = weather?.conditionText
         let url = "http:" + (weather?.conditionIcon)!
-        let imgURL = NSURL(string: url)
-        let data = NSData(contentsOf: (imgURL as URL?)!)
-        weatherImage.image = UIImage(data: (data as Data?)!)
+        weatherImage.dowloadImage(from: url)
         viewForecast.isHidden = false
     }
     
@@ -96,11 +95,9 @@ extension ViewController: CLLocationManagerDelegate {
         let geoCoder = CLGeocoder()
         let location = CLLocation(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
         geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
-            
             // Place details
             var placeMark: CLPlacemark!
             placeMark = placemarks?[0]
-            
             // City
             if let city = placeMark.addressDictionary?["City"] as? String {
                 let trimmedString = city.replacingOccurrences(of: " ", with: "", options: .literal, range: nil)
@@ -109,17 +106,12 @@ extension ViewController: CLLocationManagerDelegate {
                 UIApplication.shared.isNetworkActivityIndicatorVisible = true
                 
             }
-            //
-            //            // Country
-            //            if let country = placeMark.addressDictionary?["Country"] as? NSString {
-            //                print(country)
-            //            }
-            
         })
         manager.stopUpdatingLocation()
     }
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        //        print("Error \(error)")
+        print("Error \(error)")
     }
 }
 

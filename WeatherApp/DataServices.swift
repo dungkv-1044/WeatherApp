@@ -15,10 +15,28 @@ class DataServices {
         }
     }
     var weather : Weather?
+    private var _weatherOfHour: [WeatherOfHour]?
     
+    var weatherOfHour: [WeatherOfHour]! {
+        set {
+            _weatherOfHour = newValue
+        }
+        get {
+            if _weatherOfHour == nil {
+                getHours()
+            }
+            return _weatherOfHour ?? []
+        }
+    }
+    
+    func getHours() {
+        if let currentTime = weather?.today {
+            _weatherOfHour = weather?.weatherOfDays[0].weatherOfHours.filter { $0.time_Hour > currentTime}
+        }
+    }
     func fetchWeatherFromURL(locationString: String) {
         print(locationString)
-        let URL_WEATHER = "http://api.apixu.com/v1/current.json?key=7042f000fa43421b98612223172606&q=\(locationString)"
+        let URL_WEATHER = "http://api.apixu.com/v1/forecast.json?&days=7&key=7042f000fa43421b98612223172606&q=\(locationString)"
         let URL_STRING = URL(string: URL_WEATHER)
         guard let url = URL_STRING else {return}
         let request = URLRequest(url: url)
@@ -28,7 +46,7 @@ class DataServices {
                 return
             }
             guard let jsonObject = (try? JSONSerialization.jsonObject(with: data!, options: .allowFragments)) as? Dictionary<AnyHashable,Any> else {return}
-            guard let weather = Weather(dictionary: jsonObject) else {
+            guard let weather = Weather(json: jsonObject) else {
                 return
             }
             DispatchQueue.main.async {
@@ -42,13 +60,3 @@ class DataServices {
     }
     
 }
-
-func groupText(text: String?) -> String {
-    var data = ""
-    let stringOfWord = text?.components(separatedBy: " ")
-    for word in stringOfWord! {
-        data += word
-    }
-    return data.lowercased()
-}
-
