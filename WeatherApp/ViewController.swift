@@ -41,6 +41,7 @@ class ViewController: UIViewController  {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         registerNotification()
+        viewForecast.isHidden = true
         locationManager.delegate = self
         
     }
@@ -101,6 +102,7 @@ extension ViewController: CLLocationManagerDelegate {
             // City
             if let city = placeMark.addressDictionary?["City"] as? String {
                 let trimmedString = city.replacingOccurrences(of: " ", with: "", options: .literal, range: nil)
+                DataServices.shared.city = city
                 let text = ConvertHelper.convertVN(trimmedString).lowercased()
                 DataServices.shared.searchKey = text
                 UIApplication.shared.isNetworkActivityIndicatorVisible = true

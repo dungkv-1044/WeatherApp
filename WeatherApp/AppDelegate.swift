@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             barMetrics: .default)
         
         UINavigationBar.appearance().shadowImage = UIImage()
+        
         return true
     }
 

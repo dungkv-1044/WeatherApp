@@ -14,6 +14,7 @@ class DataServices {
             fetchWeatherFromURL(locationString: searchKey)
         }
     }
+    var city: String = ""
     var weather : Weather?
     private var _weatherOfHour: [WeatherOfHour]?
     

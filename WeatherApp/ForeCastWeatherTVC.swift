@@ -19,6 +19,7 @@ class ForeCastWeatherTVC: UITableViewController {
     @IBOutlet weak var dayOfWeek: UILabel!
     @IBOutlet weak var colectionView: UICollectionView!
     
+    @IBOutlet weak var city: UILabel!
     @IBOutlet weak var currentWeather: UILabel!
     @IBOutlet weak var currentTemp: UILabel!
     @IBOutlet weak var today: UILabel!
@@ -39,10 +40,10 @@ class ForeCastWeatherTVC: UITableViewController {
         today.isHidden = true
         colectionView.isHidden = true
         initData()
-        navigationItem.title = DataServices.shared.weather?.cityName
+        city.text = DataServices.shared.city
         currentTemp.text = DataServices.shared.weather?.tempC
         currentWeather.text = DataServices.shared.weather?.conditionText
-        
+       
     }
     
     override func didReceiveMemoryWarning() {
